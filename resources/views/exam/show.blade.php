@@ -43,6 +43,10 @@
             <dt>
                 <h3>            
                 @role('教師')
+                <form action="{{route('topic.destroy', $topic->id)}}" method="POST" style="display:inline">
+                    {{ csrf_field() }}
+                    <button type="submit" name="_method" value="DELETE" class="btn btn-danger">刪除</button>
+                </form>
                 <a href="{{route('topic.edit', $topic->id)}}" class="btn btn-warning">編輯</a>
                 （{{$topic->ans}}）
                 @endrole

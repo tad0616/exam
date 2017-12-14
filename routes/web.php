@@ -29,3 +29,4 @@ Route::patch('/exam/{id}', 'ExamController@update')->name('exam.update');
 Route::post('/topic', 'TopicController@store')->name('topic.store');
 Route::get('/topic/{id}/edit', 'TopicController@edit')->name('topic.edit');
 Route::patch('/topic/{id}', 'TopicController@update')->name('topic.update');
+Route::delete('/topic/{id}', 'TopicController@destroy')->name('topic.destroy');
