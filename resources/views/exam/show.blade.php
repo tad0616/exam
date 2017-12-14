@@ -12,16 +12,29 @@
     </div>
     <hr>
     @role('教師')
-        @form(['url' => '/topic', 'class' => 'form-horizontal', 'framework' => 'bootstrap4'])
-            @textarea('topic', '', ['placeholder' => '請輸入題目內容', 'label' => '題目內容', 'rows' => 3])
-            @text('opt1', '', ['placeholder' => '輸入選項1', 'label' => '選項1'])
-            @text('opt2', '', ['placeholder' => '輸入選項2', 'label' => '選項2'])
-            @text('opt3', '', ['placeholder' => '輸入選項3', 'label' => '選項3'])
-            @text('opt4', '', ['placeholder' => '輸入選項4', 'label' => '選項4'])
-            @select ('ans', [1=>1, 2=>2, 3=>3, 4=>4], null, ['placeholder' => '請設定正確解答', 'label' => '正確解答'])
-            @hidden('exam_id', $exam->id)
-            @submit('儲存', ['class' => 'btn btn-success']) 
-        @endform
+        @if(isset($topic->id))
+            @form(['url' => '/topic/'.$topic->id, 'class' => 'form-horizontal', 'framework' => 'bootstrap4', 'method' => 'patch'])
+                @textarea('topic', $topic->topic, ['placeholder' => '請輸入題目內容', 'label' => '題目內容', 'rows' => 3])
+                @text('opt1', $topic->opt1, ['placeholder' => '輸入選項1', 'label' => '選項1'])
+                @text('opt2', $topic->opt2, ['placeholder' => '輸入選項2', 'label' => '選項2'])
+                @text('opt3', $topic->opt3, ['placeholder' => '輸入選項3', 'label' => '選項3'])
+                @text('opt4', $topic->opt4, ['placeholder' => '輸入選項4', 'label' => '選項4'])
+                @select ('ans', [1=>1, 2=>2, 3=>3, 4=>4], $topic->ans, ['placeholder' => '請設定正確解答', 'label' => '正確解答'])
+                @hidden('exam_id', $exam->id)
+                @submit('儲存', ['class' => 'btn btn-success'])
+            @endform
+        @else
+            @form(['url' => '/topic', 'class' => 'form-horizontal', 'framework' => 'bootstrap4'])
+                @textarea('topic', '', ['placeholder' => '請輸入題目內容', 'label' => '題目內容', 'rows' => 3])
+                @text('opt1', '', ['placeholder' => '輸入選項1', 'label' => '選項1'])
+                @text('opt2', '', ['placeholder' => '輸入選項2', 'label' => '選項2'])
+                @text('opt3', '', ['placeholder' => '輸入選項3', 'label' => '選項3'])
+                @text('opt4', '', ['placeholder' => '輸入選項4', 'label' => '選項4'])
+                @select ('ans', [1=>1, 2=>2, 3=>3, 4=>4], '', ['placeholder' => '請設定正確解答', 'label' => '正確解答'])
+                @hidden('exam_id', $exam->id)
+                @submit('儲存', ['class' => 'btn btn-success'])
+            @endform
+        @endif
         <hr>
     @endrole
 
@@ -30,6 +43,7 @@
             <dt>
                 <h3>            
                 @role('教師')
+                <a href="{{route('topic.edit', $topic->id)}}" class="btn btn-warning">編輯</a>
                 （{{$topic->ans}}）
                 @endrole
                 &#{!!$key + 9352!!}; {{$topic->topic}}

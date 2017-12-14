@@ -27,3 +27,4 @@ Route::patch('/exam/{id}', 'ExamController@update')->name('exam.update');
 
 
 Route::post('/topic', 'TopicController@store')->name('topic.store');
+Route::get('/topic/{id}/edit', 'TopicController@edit')->name('topic.edit');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exam;
 use App\Topic;
 use Illuminate\Http\Request;
 
@@ -58,7 +59,9 @@ class TopicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $topic = Topic::find($id);
+        $exam  = Exam::find($topic->exam_id);
+        return view('exam.show', compact('topic', 'exam'));
     }
 
     /**
