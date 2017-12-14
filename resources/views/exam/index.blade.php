@@ -13,5 +13,8 @@
             <div class="alert alert-danger">尚無任何測驗</div>
         @endforelse
     </ul>
+    <div class="my-3">
+        {!! $exams->links("pagination::bootstrap-4") !!}
+    </div>
 @endsection
 
