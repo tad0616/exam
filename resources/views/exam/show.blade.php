@@ -3,6 +3,10 @@
     <h1 class="text-center">
     {{$exam->title}}
     @role('教師')
+    <form action="{{route('exam.destroy', $exam->id)}}" method="POST" style="display:inline">
+        {{ csrf_field() }}
+        <button type="submit" name="_method" value="DELETE" class="btn btn-danger">刪除</button>
+    </form>
     <a href="{{route('exam.edit', $exam->id)}}" class="btn btn-warning">編輯</a>
     @endrole
     </h1>

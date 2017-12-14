@@ -100,6 +100,7 @@ class ExamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Exam::destroy($id);
+        return redirect()->route('exam.index');
     }
 }

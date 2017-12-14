@@ -24,6 +24,8 @@ Route::post('/exam', 'ExamController@store')->name('exam.store');
 Route::get('/exam/{id}', 'ExamController@show')->name('exam.show');
 Route::get('/exam/{id}/edit', 'ExamController@edit')->name('exam.edit');
 Route::patch('/exam/{id}', 'ExamController@update')->name('exam.update');
+Route::delete('/exam/{id}', 'ExamController@destroy')->name('exam.destroy');
+
 
 
 Route::post('/topic', 'TopicController@store')->name('topic.store');
