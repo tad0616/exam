@@ -24,6 +24,8 @@
 
           <!-- ======================================= -->
           {{-- <li class="header">Other menus</li> --}}
+          <li><a href="{{  backpack_url('elfinder') }}"><i class="fa fa-files-o"></i> <span>檔案管理</span></a></li>
+
         </ul>
       </section>
       <!-- /.sidebar -->
