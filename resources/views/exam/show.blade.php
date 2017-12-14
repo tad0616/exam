@@ -8,7 +8,7 @@
     <hr>
     @role('教師')
         @form(['url' => '/topic', 'class' => 'form-horizontal', 'framework' => 'bootstrap4'])
-            @textarea('title', '', ['placeholder' => '請輸入題目內容', 'label' => '題目內容', 'rows' => 3])
+            @textarea('topic', '', ['placeholder' => '請輸入題目內容', 'label' => '題目內容', 'rows' => 3])
             @text('opt1', '', ['placeholder' => '輸入選項1', 'label' => '選項1'])
             @text('opt2', '', ['placeholder' => '輸入選項2', 'label' => '選項2'])
             @text('opt3', '', ['placeholder' => '輸入選項3', 'label' => '選項3'])
