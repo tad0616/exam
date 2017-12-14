@@ -63,8 +63,7 @@ class ExamController extends Controller
     public function show($id)
     {
         $exam = Exam::find($id);
-        $topics = Topic::where('exam_id', $id)->get();
-        return view('exam.show', compact('exam', 'topics'));
+        return view('exam.show', compact('exam'));
     }
 
     /**
