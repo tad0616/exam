@@ -1,6 +1,11 @@
 @extends('layouts.app') 
 @section('content')
-    <h1 class="text-center">{{$exam->title}}</h1>
+    <h1 class="text-center">
+    {{$exam->title}}
+    @role('教師')
+    <a href="{{route('exam.edit', $exam->id)}}" class="btn btn-warning">編輯</a>
+    @endrole
+    </h1>
 
     <div class="text-center">
         發布於 {{$exam->created_at->format("Y年m月d日 H:i:s")}} / 最後更新： {{$exam->updated_at->format("Y年m月d日 H:i:s")}}

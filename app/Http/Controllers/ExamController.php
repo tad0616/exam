@@ -74,7 +74,8 @@ class ExamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $exam = Exam::find($id);
+        return view('exam.edit', compact('exam'));
     }
 
     /**
