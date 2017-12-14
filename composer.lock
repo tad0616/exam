@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "86dae7567b52b93cfa1c51d8b1747433",
+    "content-hash": "671a9c4a5ce4194982545e0af0707555",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1072,6 +1072,73 @@
             "time": "2017-06-15T17:19:42+00:00"
         },
         {
+            "name": "genealabs/laravel-casts",
+            "version": "0.7.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/laravel-casts.git",
+                "reference": "da9d573515a3382320b33429f3f28b4419f77369"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/laravel-casts/zipball/da9d573515a3382320b33429f3f28b4419f77369",
+                "reference": "da9d573515a3382320b33429f3f28b4419f77369",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.5.*",
+                "jenssegers/model": "^1.1",
+                "laravelcollective/html": "5.5.*",
+                "php": ">=7.0.0",
+                "symfony/dom-crawler": "^3.2"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "~1.4",
+                "laravel/browser-kit-testing": "^2.0",
+                "laravel/laravel": "5.5.*",
+                "mockery/mockery": "0.9.*",
+                "nunomaduro/collision": "^1.1",
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "6.*",
+                "satooshi/php-coveralls": "dev-master@dev",
+                "sebastian/phpcpd": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "dont-discover": [
+                        "laravelcollective/html"
+                    ],
+                    "providers": [
+                        "GeneaLabs\\LaravelCasts\\Providers\\LaravelCastsService"
+                    ],
+                    "aliases": {
+                        "Form": "GeneaLabs\\LaravelCasts\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "classmap": [],
+                "psr-4": {
+                    "GeneaLabs\\LaravelCasts\\": "src/",
+                    "GeneaLabs\\LaravelCasts\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "GeneaLabs, LLC",
+                    "email": "hello@genealabs.com"
+                }
+            ],
+            "description": "Useful form macros for Laravel's Blade template engine.",
+            "time": "2017-12-13T21:04:17+00:00"
+        },
+        {
             "name": "guzzlehttp/psr7",
             "version": "1.4.2",
             "source": {
@@ -1357,6 +1424,54 @@
                 "translation"
             ],
             "time": "2017-06-30T11:51:03+00:00"
+        },
+        {
+            "name": "jenssegers/model",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/model.git",
+                "reference": "2d8d7c813632b86734b3ff094333d500278e39e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/model/zipball/2d8d7c813632b86734b3ff094333d500278e39e9",
+                "reference": "2d8d7c813632b86734b3ff094333d500278e39e9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.0",
+                "illuminate/support": "^4.0|^5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "satooshi/php-coveralls": "^0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Model\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "An Laravel eloquent-like model class, for Laravel and other frameworks",
+            "homepage": "https://github.com/jenssegers/model",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "model"
+            ],
+            "time": "2017-02-21T10:09:15+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2865,6 +2980,62 @@
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
             "time": "2017-11-21T09:01:46+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "7bf68716e400997a291ad42c9f9fe7972e6656d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/7bf68716e400997a291ad42c9f9fe7972e6656d2",
+                "reference": "7bf68716e400997a291ad42c9f9fe7972e6656d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "symfony/css-selector": "~2.8|~3.0|~4.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DomCrawler Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-11-05T16:10:10+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
