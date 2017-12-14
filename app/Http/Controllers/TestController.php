@@ -60,9 +60,20 @@ class TestController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $test = Test::find($id);
+        $topics = json_decode($test->content, true);
+        $content = [];
+        $i=0;
+        foreach ($topics as $topic_id => $ans) {
+            $topic = Topic::find($topic_id);
+            $content[$i]['topic'] = $topic;
+            $content[$i]['ans'] = $ans;
+            $i++;
 
+        }
+        return view('exam.test', compact('test', 'content'));
+    }
+    
     /**
      * Show the form for editing the specified resource.
      *
