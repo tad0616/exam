@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Exam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ExamRequest;
 
 class ExamController extends Controller
 {
@@ -42,15 +43,8 @@ class ExamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ExamRequest $request)
     {
-        $this->validate($request, [
-            'title' => 'required|min:2|max:255',
-        ], [
-            'required' => '必填欄位',
-            'min'      => '至少要 :min 個字',
-            'max'      => '最多只能 :max 個字',
-        ]);
         $exam = Exam::create($request->all());
         return redirect()->route('exam.index');
     }
@@ -84,7 +78,7 @@ class ExamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ExamRequest $request, $id)
     {
         //
     }
