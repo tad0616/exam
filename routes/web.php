@@ -32,3 +32,6 @@ Route::post('/topic', 'TopicController@store')->name('topic.store');
 Route::get('/topic/{id}/edit', 'TopicController@edit')->name('topic.edit');
 Route::patch('/topic/{id}', 'TopicController@update')->name('topic.update');
 Route::delete('/topic/{id}', 'TopicController@destroy')->name('topic.destroy');
+
+Route::post('/test', 'TestController@store')->name('test.store');
+Route::get('/test/{id}', 'TestController@show')->name('test.show');
