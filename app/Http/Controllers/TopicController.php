@@ -73,7 +73,9 @@ class TopicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $topic = Topic::find($id);
+        $topic->update($request->all());
+        return redirect()->route('exam.show', $topic->exam_id);
     }
 
     /**
