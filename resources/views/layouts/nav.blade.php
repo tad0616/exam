@@ -24,7 +24,7 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 						@role('教師')
-							<a href="admin" class="dropdown-item">後台管理</a>
+							<a href="/admin" class="dropdown-item">後台管理</a>
 							<a href="{{ route('exam.create') }}" class="dropdown-item">新增測驗</a>
 						@endrole
 						<a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">

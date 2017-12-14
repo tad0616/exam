@@ -42,6 +42,9 @@
         <hr>
     @endrole
 
+    @role('學生') 
+        @form(['url' => '/test', 'class' => 'form-horizontal', 'framework' => 'bootstrap4']) 
+    @endrole
     <dl>
         @forelse ($exam->topics as $key => $topic)
             <dt>
@@ -79,7 +82,12 @@
             <div class="alert alert-danger">尚無任何題目</div>
         @endforelse
     </dl>
-
+    @role('學生')
+            @hidden('exam_id', $exam->id)
+            @hidden('user_id', $user_id)
+            @submit('寫完送出計分', ['class' => 'btn btn-success'])
+        @endform
+    @endrole
     <div class="text-center">
         <a href="{!!route('exam.index')!!}" class="btn btn-info">回首頁</a>
     </div>
