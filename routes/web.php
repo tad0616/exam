@@ -23,5 +23,7 @@ Route::get('/exam/create', 'ExamController@create')->name('exam.create');
 Route::post('/exam', 'ExamController@store')->name('exam.store');
 Route::get('/exam/{id}', 'ExamController@show')->name('exam.show');
 Route::get('/exam/{id}/edit', 'ExamController@edit')->name('exam.edit');
+Route::patch('/exam/{id}', 'ExamController@update')->name('exam.update');
+
 
 Route::post('/topic', 'TopicController@store')->name('topic.store');

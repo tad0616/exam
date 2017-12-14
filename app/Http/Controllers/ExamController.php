@@ -87,7 +87,9 @@ class ExamController extends Controller
      */
     public function update(ExamRequest $request, $id)
     {
-        //
+        $exam = Exam::find($id);
+        $exam->update($request->all());
+        return redirect()->route('exam.show', $id);
     }
 
     /**
