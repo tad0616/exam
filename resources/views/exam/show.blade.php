@@ -20,6 +20,39 @@
         <hr>
     @endrole
 
+    <dl>
+        @forelse ($topics as $key => $topic)
+            <dt>
+                <h3>            
+                @role('教師')
+                （{{$topic->ans}}）
+                @endrole
+                &#{!!$key + 9352!!}; {{$topic->topic}}
+                </h3>
+            </dt>
+            <dd>
+                <label class="mx-2">
+                    <input type="radio" name="ans[{{$topic->id}}]" value="1">
+                    <span class="opt">&#10102;</span> {{$topic->opt1}}
+                </label>
+                <label class="mx-2">
+                    <input type="radio" name="ans[{{$topic->id}}]" value="2">
+                    <span class="opt">&#10103;</span> {{$topic->opt2}}
+                </label>
+                <label class="mx-2">
+                    <input type="radio" name="ans[{{$topic->id}}]" value="3">
+                    <span class="opt">&#10104;</span> {{$topic->opt3}}
+                </label>
+                <label class="mx-2">
+                    <input type="radio" name="ans[{{$topic->id}}]" value="4">
+                    <span class="opt">&#10105;</span> {{$topic->opt4}}
+                </label>
+            </dd>
+        @empty
+            <div class="alert alert-danger">尚無任何題目</div>
+        @endforelse
+    </dl>
+
     <div class="text-center">
         <a href="{!!route('exam.index')!!}" class="btn btn-info">回首頁</a>
     </div>
