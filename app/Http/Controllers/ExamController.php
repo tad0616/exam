@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExamController extends Controller
 {
@@ -23,7 +24,16 @@ class ExamController extends Controller
      */
     public function create()
     {
-        return view('exam.create');
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('建立測驗')) {
+                $user_id = Auth::id();
+                return view('exam.create', compact('user_id'));
+            } else {
+                return view('welcome');
+            }
+        } else {
+            return view('auth.login');
+        }
     }
 
     /**
