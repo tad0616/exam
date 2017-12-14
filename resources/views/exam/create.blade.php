@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('content')
-    <h1>新增測驗</h1>    
+    <h1>新增測驗</h1>
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     @form(['url' => '/exam', 'class' => 'form-horizontal', 'labelWidth' => '2', 'fieldWidth' => '10', 'framework' => 'bootstrap4'])
         @text('title', '', ['placeholder' => '請輸入測驗標題', 'label' => '測驗標題'])
         @checkbox('enable', '1', true, ['placeholder' => '是否啟用', 'label' => '啟用此測驗'])
